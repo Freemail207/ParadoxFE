@@ -12,7 +12,7 @@ module.exports = {
     devtool: "eval-source-map",
     // webpack 5 comes with devServer which loads in development mode
     devServer: {
-        port: 8081,
+        port: 8082,
         static: true
     },
     // Rules of how webpack will take our files, complie & bundle them for the browser
@@ -32,6 +32,11 @@ module.exports = {
             {
                 test: [/\.vert$/, /\.frag$/],
                 use: "raw-loader"
+            },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
             },
             {
                 test: /\.(gif|png|jpe?g|svg|xml)$/i,

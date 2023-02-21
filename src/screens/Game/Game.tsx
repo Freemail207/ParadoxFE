@@ -5,6 +5,7 @@ const Game = () => {
     const classes = useStyles();
     return (
         <div className={classes.gameRoot}>
+            Game
             <canvas id={'game'}/>
         </div>
     );

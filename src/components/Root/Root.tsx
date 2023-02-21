@@ -6,6 +6,7 @@ import Navigation from '@navigation';
 import { useSelector } from 'react-redux';
 
 const Root = () => {
+    console.log('AAAAA');
   return (
     <BrowserRouter>
       {/*<Notifications />*/}
