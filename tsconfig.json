@@ -12,6 +12,12 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "resolveJsonModule": true,
+    "typeRoots": [
+      "./node_modules/phaser/types"
+    ],
+    "types": [
+      "Phaser"
+    ],
     "lib": [
       "DOM",
       "DOM.Iterable",
@@ -23,6 +29,8 @@
       "@store/*": ["store/*"],
       "@components": ["components"],
       "@components/*": ["components/*"],
+      "@constants": ["constants"],
+      "@constants/*": ["constants/*"],
       "@screens": ["screens"],
       "@screens/*": ["screens/*"],
       "@i18n": ["i18n"],

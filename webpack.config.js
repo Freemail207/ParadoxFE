@@ -1,5 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require("webpack");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
     // Where files should be sent once they are bundled
@@ -7,9 +9,10 @@ module.exports = {
         path: path.join(__dirname, '/dist'),
         filename: 'index.bundle.js'
     },
+    devtool: "eval-source-map",
     // webpack 5 comes with devServer which loads in development mode
     devServer: {
-        port: 8080,
+        port: 8081,
         static: true
     },
     // Rules of how webpack will take our files, complie & bundle them for the browser
@@ -25,6 +28,14 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
+            },
+            {
+                test: [/\.vert$/, /\.frag$/],
+                use: "raw-loader"
+            },
+            {
+                test: /\.(gif|png|jpe?g|svg|xml)$/i,
+                use: "file-loader"
             }
         ]
     },
@@ -35,6 +46,7 @@ module.exports = {
             "@store": path.resolve(__dirname,  "./src/store"),
             "@store/typings": path.resolve(__dirname,  "./src/store/typings"),
             "@components": path.resolve(__dirname,  "./src/components/"),
+            "@constants": path.resolve(__dirname,  "./src/constants/"),
             "@screens": path.resolve(__dirname,  "./src/screens/"),
             "@navigation": path.resolve(__dirname,  "./src/navigation"),
             "@navigation/typings": path.resolve(__dirname,  "./src/navigation/typings"),
@@ -52,5 +64,14 @@ module.exports = {
             "@types": path.resolve(__dirname,  "./src/types"),
         },
     },
-    plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
+    plugins: [
+        new HtmlWebpackPlugin({ template: './src/index.html' }),
+        new CleanWebpackPlugin({
+            root: path.resolve(__dirname, "../")
+        }),
+        new webpack.DefinePlugin({
+            CANVAS_RENDERER: JSON.stringify(true),
+            WEBGL_RENDERER: JSON.stringify(true)
+        }),
+    ],
 }

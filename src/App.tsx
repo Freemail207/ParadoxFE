@@ -1,12 +1,16 @@
 import React from "react"
 import Loader from '@components/Header'
+import { Provider } from 'react-redux';
+import store from '@store/index';
+
+
 
 function App() {
-    return (<div>
-        <h2>Welcome to React App</h2>
-        <Loader/>
-        <h3>Date : {new Date().toDateString()}</h3>
-    </div>)
+    return (
+        <Provider store={store}>
+
+        </Provider>
+    )
 }
 
 export default App
