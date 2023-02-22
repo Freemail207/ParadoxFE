@@ -12,8 +12,9 @@ module.exports = {
     devtool: "eval-source-map",
     // webpack 5 comes with devServer which loads in development mode
     devServer: {
-        port: 8082,
-        static: true
+        port: 8080,
+        static: true,
+        historyApiFallback: true,
     },
     // Rules of how webpack will take our files, complie & bundle them for the browser
     module: {
