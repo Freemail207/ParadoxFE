@@ -68,6 +68,7 @@ module.exports = {
             "@assets": path.resolve(__dirname,  "./src/assets"),
             "@theme": path.resolve(__dirname,  "./src/styles/theme"),
             "@types": path.resolve(__dirname,  "./src/types"),
+            "@game": path.resolve(__dirname,  "./src/game"),
         },
     },
     plugins: [
