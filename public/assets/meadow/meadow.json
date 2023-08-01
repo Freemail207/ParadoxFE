@@ -1,7 +1,7 @@
 {
   "textures": [
     {
-      "image": "meadowGround.png",
+      "image": "./meadow/meadowGround.png",
       "format": "RGBA8888",
       "size": {
         "w": 20,
@@ -10,11 +10,11 @@
       "scale": 1,
       "frames": [
         {
-          "filename": "meadow_default.png",
+          "filename": "Default",
           "rotated": false,
           "trimmed": false,
           "sourceSize": {
-            "w": 10,
+            "w": 20,
             "h": 10
           },
           "spriteSourceSize": {
@@ -24,10 +24,10 @@
             "h": 10
           },
           "frame": {
-            "x": 1,
-            "y": 1,
-            "w": 64,
-            "h": 64
+            "x": 0,
+            "y": 0,
+            "w": 10,
+            "h": 10
           },
           "anchor": {
             "x": 0.5,
@@ -35,7 +35,7 @@
           }
         },
         {
-          "filename": "meadow_moor.png",
+          "filename": "Moor",
           "rotated": false,
           "trimmed": false,
           "sourceSize": {
